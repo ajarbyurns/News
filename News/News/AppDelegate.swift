@@ -56,6 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()*/
+        
+        let categories = CategoriesViewController(CategoriesViewModel())
+        let nav = UINavigationController(rootViewController: categories)
+        
+        UINavigationBar.appearance().barTintColor = lightBG
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = nav
+        self.window?.makeKeyAndVisible()
     }
 
 }
